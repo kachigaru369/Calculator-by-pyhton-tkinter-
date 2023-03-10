@@ -1,6 +1,8 @@
 from tkinter import *
 root =Tk()
 root.title("The Calculator")
+root.iconbitmap('./Calculator_icon.ico')
+
 def click(number):
     current = e.get()
     e.delete(0,END)
@@ -74,6 +76,7 @@ button_divide = Button(root , text="/" , padx=21 , pady=20 , command=divide)
 button_add = Button(root , text="+" , padx=19 , pady=20 , command=add)
 button_clear = Button(root , text="C" , padx=20 , pady=20 , command=clear)
 button_subtract = Button(root , text="-" , padx=20 , pady=20 , command=subtract)
+button_quit = Button(root , text="Exit Program" , command=root.quit)
 
 
 
@@ -94,7 +97,7 @@ button_clear.grid(row=4 , column=3 )
 button_subtract.grid(row=4 , column=1 )
 button_multiply.grid(row=2 , column=3 )
 button_divide.grid(row=1 , column=3 )
-
+button_quit.grid(row=6 , columnspan=4)
 
 
 
