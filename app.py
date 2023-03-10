@@ -10,10 +10,50 @@ def clear():
     e.delete(0,END)
 
 def add():
-    first_number = e.get()
+    first_number =e.get()
     global f_num
+    global math
+    math = "addition"
     f_num = int(first_number)
     e.delete(0,END)
+
+def equal():
+    second_number = e.get()
+    e.delete(0,END)
+    if math == "addition":
+        e.insert(0,f_num + int(second_number))
+    if math == "subtraction":
+        e.insert(0,f_num - int(second_number))
+    if math == "multiplication":
+        e.insert(0,f_num * int(second_number))
+    if math == "division":
+        e.insert(0,f_num / int(second_number))
+    
+
+def subtract():
+    first_number =e.get()
+    global f_num
+    global math
+    math = "subtraction"
+    f_num = int(first_number)
+    e.delete(0,END)
+
+def multiply():
+    first_number =e.get()
+    global f_num
+    global math
+    math = "multiplication"
+    f_num = int(first_number)
+    e.delete(0,END)
+
+def divide():
+    first_number =e.get()
+    global f_num
+    global math
+    math = "division"
+    f_num = int(first_number)
+    e.delete(0,END)
+
 
 
 e = Entry(root ,borderwidth=5)
@@ -28,10 +68,12 @@ button_7 = Button(root , text="7" , padx=20 , pady=20 , command=lambda: click(7)
 button_8 = Button(root , text="8" , padx=20 , pady=20 , command=lambda: click(8))
 button_9 = Button(root , text="9" , padx=20 , pady=20 , command=lambda: click(9))
 button_0 = Button(root , text="0" , padx=20 , pady=20 , command=lambda: click(0))
-button_equal = Button(root , text="=" , padx=20 , pady=84 , command=lambda: click())
-button_add = Button(root , text="+" , padx=20 , pady=20 , command=add)
+button_equal = Button(root , text="=" , padx=19 , pady=20 , command=equal)
+button_multiply = Button(root , text="*" , padx=21 , pady=20 , command=multiply)
+button_divide = Button(root , text="/" , padx=21 , pady=20 , command=divide)
+button_add = Button(root , text="+" , padx=19 , pady=20 , command=add)
 button_clear = Button(root , text="C" , padx=20 , pady=20 , command=clear)
-button_minus = Button(root , text="-" , padx=20 , pady=20 , command=lambda: click())
+button_subtract = Button(root , text="-" , padx=20 , pady=20 , command=subtract)
 
 
 
@@ -46,10 +88,12 @@ button_7.grid(row=1 , column=0 )
 button_8.grid(row=1 , column=1 )
 button_9.grid(row=1 , column=2 )
 button_0.grid(row=4 , column=0 )
-button_equal.grid(row=1 , column=3 ,rowspan=3 )
+button_equal.grid(row=3 , column=3 )
 button_add.grid(row=4 , column=2 )
 button_clear.grid(row=4 , column=3 )
-button_minus.grid(row=4 , column=1 )
+button_subtract.grid(row=4 , column=1 )
+button_multiply.grid(row=2 , column=3 )
+button_divide.grid(row=1 , column=3 )
 
 
 
